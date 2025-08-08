@@ -1,6 +1,7 @@
 import psutil
 import time
 import subprocess
+import keyboard
 from rich.console import Console
 from rich.table import Table
 console=Console()
@@ -20,3 +21,7 @@ if __name__=="__main__":
    time.sleep(1)
    subprocess.call("clear")
    console.print(table,end="\r")
+   if keyboard.is_pressed("q")==True:
+      quit("Program exitted")
+   else:
+     pass
