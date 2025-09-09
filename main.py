@@ -30,9 +30,10 @@ def show_processes():
         yield table.format(process_name=proc,pid=id,state=state[0].upper())
  except (psutil.AccessDenied,psutil.ZombieProcess,psutil.NoSuchProcess):
      pass
-display_processes=show_processes()
+
 if __name__=="__main__":
  while True:
+   display_processes=show_processes()
    for n in display_processes:
       print(n)
    os_name=platform.system()
